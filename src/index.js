@@ -1,3 +1,3 @@
-const { docClient } = require('./doc-client');
+const docClient = require('./doc-client');
 
-module.exports = { docClient };
+module.exports = { docClient: docClient };
