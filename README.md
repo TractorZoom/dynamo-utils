@@ -1,5 +1,7 @@
 # @tractorzoom/dynamo-utils
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest) [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
 ## Available Methods
 
 ##### Method: `docClient(method, params)`
@@ -25,7 +27,7 @@ import { docClient } from '@tractorzoom/dynamo-utils';
 export const putHandler = async () => {
     const params = {
         Table: 'MyTable',
-        Item: { key: 'super awesome item' }
+        Item: { key: 'super awesome item' },
     };
 
     const response = await docClient('put', params);

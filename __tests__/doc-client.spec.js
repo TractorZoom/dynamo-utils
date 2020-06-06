@@ -15,21 +15,21 @@ const methodsToTest = [
     ['scan'],
     ['transactGet'],
     ['transactWrite'],
-    ['update']
+    ['update'],
 ];
 
-describe.each(methodsToTest)('docClient method tests', method => {
+describe.each(methodsToTest)('docClient method tests', (method) => {
     let mockData, docClientSpy;
 
     beforeEach(() => {
         mockData = {
             params: { key: chance.hash() },
             response: chance.string(),
-            errorResponse: chance.string()
+            errorResponse: chance.string(),
         };
 
         docClientSpy = jest.spyOn(dynamo.DocumentClient.prototype, method).mockReturnValue({
-            promise: () => Promise.resolve(mockData.response)
+            promise: () => Promise.resolve(mockData.response),
         });
     });
 
@@ -54,7 +54,7 @@ describe.each(methodsToTest)('docClient method tests', method => {
         const errorResponse = { error: `${mockData.errorResponse}` };
 
         docClientSpy = jest.spyOn(dynamo.DocumentClient.prototype, method).mockReturnValue({
-            promise: () => Promise.reject(mockData.errorResponse)
+            promise: () => Promise.reject(mockData.errorResponse),
         });
 
         const response = await docClient(method, mockData.params);
