@@ -39,5 +39,20 @@
         "commitizen": {
             "path": "cz-conventional-changelog"
         }
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TractorZoom/dynamo-utils.git"
+    },
+    "homepage": "https://github.com/TractorZoom/dynamo-utils",
+    "bugs": {
+        "url": "https://github.com/TractorZoom/dynamo-utils/issues"
+    },
+    "keywords": [
+        "aws",
+        "aws-dynamo",
+        "database",
+        "dynamo",
+        "dynamodb"
+    ]
 }
