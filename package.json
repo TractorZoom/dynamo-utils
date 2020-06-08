@@ -1,6 +1,6 @@
 {
     "name": "@tractorzoom/dynamo-utils",
-    "version": "2.0.0",
+    "version": "2.0.2",
     "description": "Wrapper around the JS Dynamo Doc Client implementing standardized error handling and other utilities",
     "main": "lib/index.js",
     "author": "@TractorZoom",
@@ -30,10 +30,10 @@
         "jest": "24.9.0",
         "prettier": "2.0.5",
         "pretty-quick": "2.0.1",
-        "semantic-release": "17.0.7"
+        "semantic-release": "17.0.8"
     },
     "dependencies": {
-        "aws-sdk": "2.691.0"
+        "aws-sdk": "2.692.0"
     },
     "config": {
         "commitizen": {
