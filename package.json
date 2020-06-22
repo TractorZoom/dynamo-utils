@@ -30,7 +30,7 @@
         "jest": "26.0.1",
         "prettier": "2.0.5",
         "pretty-quick": "2.0.1",
-        "semantic-release": "17.0.8"
+        "semantic-release": "17.1.0"
     },
     "dependencies": {
         "aws-sdk": "2.702.0"
