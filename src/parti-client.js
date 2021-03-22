@@ -13,7 +13,9 @@ const partiWrapper = async (method, params) => {
         do {
             const results = await _dynamo[method]({ ...params, NextToken: next }).promise();
             next = results.NextToken;
-            data.push(...results.Items);
+            if (results.Items) {
+                data.push(...results.Items);
+            }
         } while (next);
         response = data;
     } catch (ex) {

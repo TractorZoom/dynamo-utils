@@ -3,8 +3,6 @@ import partiClient, { _dynamo } from '../src/parti-client';
 
 const methodsToTest = [['executeStatement'], ['batchExecuteStatement']];
 
-jest.setTimeout(30000);
-
 describe.each(methodsToTest)('partiClient method tests', (method) => {
     it(`should call docClient.${method} with the correct params`, async () => {
         // given
