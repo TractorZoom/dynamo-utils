@@ -66,4 +66,19 @@ describe.each(methodsToTest)('partiClient method tests', (method) => {
         // then
         expect(response).toEqual({ error });
     });
+
+    it('should not add to data array if no Items returned', async () => {
+        // given
+        const params = chance.object();
+        const item = chance.object();
+        jest.spyOn(_dynamo, method).mockReturnValue({
+            promise: () => Promise.resolve({ Responses: [item] }),
+        });
+
+        // when
+        const response = await partiClient(method, params);
+
+        // then
+        expect(response).toEqual([]);
+    });
 });
