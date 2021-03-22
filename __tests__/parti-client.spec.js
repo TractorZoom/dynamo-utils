@@ -4,7 +4,7 @@ import partiClient, { _dynamo } from '../src/parti-client';
 const methodsToTest = [['executeStatement'], ['batchExecuteStatement']];
 
 describe.each(methodsToTest)('partiClient method tests', (method) => {
-    it(`should call docClient.${method} with the correct params`, async () => {
+    it(`should call partiClient.${method} with the correct params`, async () => {
         // given
         const params = chance.object();
         const item = chance.object();
