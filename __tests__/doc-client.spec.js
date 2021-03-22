@@ -1,8 +1,6 @@
-import Chance from 'chance';
+import chance from '@tractorzoom/chance-the-wrapper';
 import dynamo from 'aws-sdk/clients/dynamodb';
 import docClient from '../src/doc-client';
-
-const chance = new Chance();
 
 const methodsToTest = [
     ['batchGet'],
