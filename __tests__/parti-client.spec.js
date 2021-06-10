@@ -82,3 +82,56 @@ describe.each(methodsToTest)('partiClient method tests', (method) => {
         expect(response).toEqual([]);
     });
 });
+
+describe('batchExecuteStatement', () => {
+    it('should make multiple calls if statements > 25', async () => {
+        // given
+        const statements = chance.n(
+            () => ({ Statement: `UPDATE "SomeTable" SET foo = '${chance.name()}' where key = '${chance.natural()}';` }),
+            26
+        );
+        const params = { Statements: statements };
+        const item = chance.object();
+        jest.spyOn(_dynamo, 'batchExecuteStatement').mockReturnValue({
+            promise: () => Promise.resolve({ Responses: [] }),
+        });
+
+        // when
+        const response = await partiClient('batchExecuteStatement', params);
+
+        // then
+        expect(_dynamo.batchExecuteStatement).toHaveBeenCalledTimes(2);
+        expect(_dynamo.batchExecuteStatement).toHaveBeenNthCalledWith(1, {
+            Statements: statements.slice(0, 25),
+        });
+        expect(_dynamo.batchExecuteStatement).toHaveBeenNthCalledWith(2, {
+            Statements: statements.slice(-1),
+        });
+    });
+
+    it('should make multiple calls if statements > 25, returns items', async () => {
+        // given
+        const statements = chance.n(
+            () => ({ Statement: `UPDATE "SomeTable" SET foo = '${chance.name()}' where key = '${chance.natural()}';` }),
+            26
+        );
+        const params = { Statements: statements };
+        const item = chance.object();
+        jest.spyOn(_dynamo, 'batchExecuteStatement').mockReturnValue({
+            promise: () => Promise.resolve({ Items: [item] }),
+        });
+
+        // when
+        const response = await partiClient('batchExecuteStatement', params);
+
+        // then
+        expect(response).toEqual([item, item]);
+        expect(_dynamo.batchExecuteStatement).toHaveBeenCalledTimes(2);
+        expect(_dynamo.batchExecuteStatement).toHaveBeenNthCalledWith(1, {
+            Statements: statements.slice(0, 25),
+        });
+        expect(_dynamo.batchExecuteStatement).toHaveBeenNthCalledWith(2, {
+            Statements: statements.slice(-1),
+        });
+    });
+});
