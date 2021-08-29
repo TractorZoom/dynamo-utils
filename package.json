@@ -33,7 +33,7 @@
         "semantic-release": "17.4.7"
     },
     "dependencies": {
-        "aws-sdk": "2.973.0"
+        "aws-sdk": "2.978.0"
     },
     "config": {
         "commitizen": {
