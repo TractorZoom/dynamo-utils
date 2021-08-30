@@ -16,6 +16,6 @@ jobs:
             - run: |
                   npm ci
                   npm test
-        env:
-            CI: true
-            NPM_PRIVATE_READ: ${{ secrets.NPM_PRIVATE_READ }}
+              env:
+                  CI: true
+                  NPM_PRIVATE_READ: ${{ secrets.NPM_PRIVATE_READ }}
