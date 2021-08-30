@@ -13,7 +13,8 @@ jobs:
             - uses: actions/setup-node@v2
               with:
                   node-version: 14
-            - run: |
+            - name: Test
+              run: |
                   npm ci
                   npm test
               env:
