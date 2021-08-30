@@ -25,8 +25,10 @@ const partiWrapper = async (method, params) => {
 
         if (method === 'batchExecuteStatement' && params?.Statements?.length > 25) {
             const chunks = sliceIntoChunks(params.Statements, 25);
+
             for (const chunk of chunks) {
                 const results = await _dynamo[method]({ Statements: chunk }).promise();
+
                 if (results.Items) {
                     data.push(...results.Items);
                 }
