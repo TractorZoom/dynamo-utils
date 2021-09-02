@@ -18,7 +18,7 @@
     "devDependencies": {
         "@babel/cli": "7.14.8",
         "@babel/core": "7.15.0",
-        "@tractorzoom/chance-the-wrapper": "2.1.83",
+        "@tractorzoom/chance-the-wrapper": "2.1.84",
         "@tractorzoom/configs": "1.0.1",
         "aws-sdk": "2.978.0"
     },
