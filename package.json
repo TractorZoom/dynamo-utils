@@ -20,7 +20,7 @@
         "@babel/core": "7.15.5",
         "@tractorzoom/chance-the-wrapper": "2.1.91",
         "@tractorzoom/configs": "1.0.1",
-        "aws-sdk": "2.991.0"
+        "aws-sdk": "2.995.0"
     },
     "dependencies": {},
     "config": {
