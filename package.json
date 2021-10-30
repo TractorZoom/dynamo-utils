@@ -16,8 +16,8 @@
         "test": "jest"
     },
     "devDependencies": {
-        "@babel/cli": "7.15.7",
-        "@babel/core": "7.15.8",
+        "@babel/cli": "7.16.0",
+        "@babel/core": "7.16.0",
         "@tractorzoom/chance-the-wrapper": "2.1.92",
         "@tractorzoom/configs": "1.0.1",
         "aws-sdk": "2.1013.0"
