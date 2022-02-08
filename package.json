@@ -1,6 +1,6 @@
 {
     "name": "@tractorzoom/dynamo-utils",
-    "version": "2.4.94",
+    "version": "2.4.95",
     "description": "Wrapper around the JS Dynamo Doc Client implementing standardized error handling and other utilities",
     "main": "lib/index.js",
     "author": "@TractorZoom",
