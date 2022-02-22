@@ -16,7 +16,7 @@
         "test": "jest"
     },
     "devDependencies": {
-        "@babel/cli": "7.17.3",
+        "@babel/cli": "7.17.6",
         "@babel/core": "7.17.5",
         "@tractorzoom/chance-the-wrapper": "2.1.124",
         "@tractorzoom/configs": "1.0.1",
